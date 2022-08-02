@@ -1,4 +1,4 @@
-from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.edge.service import Service
 from selenium import Webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
@@ -18,7 +18,8 @@ except:
 #HASTA AQUI
 
 #esto cambia dependiendo del driver que usemos , yo use Edge pero seria bueno probar con Chrome
-driver = webdriver.Edge(executable_path="path_al_driver_executable")
+service = Service(executable_path="path_al_driver_executable")
+driver = webdriver.Edge(service=service)
 driver.get('direccion de la pagina donde se quiere scrapear')
 assert '' in driver.title
 
